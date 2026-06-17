@@ -285,8 +285,21 @@ function ArmyBuilder({
     return init;
   });
 
+  const [selectedSets, setSelectedSets] = useState<Record<string, string>>({});
+
   const units: UnitSummary[] = faction?.units ?? [];
-  const totalPoints = units.reduce((sum, u) => sum + u.pointsCost * (roster[u.id] ?? 0), 0);
+
+  function resolvedSetId(unit: UnitSummary): string | undefined {
+    return selectedSets[unit.id] ?? (unit.weaponSets.find((s) => s.isDefault) ?? unit.weaponSets[0])?.id;
+  }
+
+  function effectiveCost(unit: UnitSummary): number {
+    if (unit.weaponSets.length === 0) return unit.pointsCost;
+    const set = unit.weaponSets.find((s) => s.id === resolvedSetId(unit));
+    return set?.effectivePointsCost ?? unit.pointsCost;
+  }
+
+  const totalPoints = units.reduce((sum, u) => sum + effectiveCost(u) * (roster[u.id] ?? 0), 0);
   const isOverBudget = totalPoints > config.pointsBudget;
   const budgetPct = Math.min((totalPoints / config.pointsBudget) * 100, 100);
 
@@ -302,6 +315,10 @@ function ArmyBuilder({
     });
   }
 
+  function selectSet(unitId: string, setId: string) {
+    setSelectedSets((prev) => ({ ...prev, [unitId]: setId }));
+  }
+
   function handleExport() {
     exportArmy({
       name: config.armyName,
@@ -314,7 +331,7 @@ function ArmyBuilder({
         .map((u) => ({
           unitId: u.id,
           name: u.name,
-          pointsCost: u.pointsCost,
+          pointsCost: effectiveCost(u),
           quantity: roster[u.id],
         })),
     });
@@ -367,7 +384,20 @@ function ArmyBuilder({
               <li key={u.id} className="rw-list-item rw-list-item--static ab-unit-row">
                 <div className="ab-unit-info">
                   <span className="rw-list-item-name">{u.name}</span>
-                  <span className="rw-list-item-pts">{u.pointsCost} pts</span>
+                  {u.weaponSets.length > 0 && (
+                    <select
+                      className="ab-set-select"
+                      value={resolvedSetId(u) ?? ''}
+                      onChange={(e) => selectSet(u.id, e.target.value)}
+                    >
+                      {u.weaponSets.map((s) => (
+                        <option key={s.id} value={s.id}>
+                          {s.name} ({s.effectivePointsCost} pts)
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                  <span className="rw-list-item-pts">{effectiveCost(u)} pts</span>
                 </div>
                 <button className="rw-btn rw-btn-secondary ab-add-btn" onClick={() => add(u.id)}>
                   +
@@ -383,12 +413,26 @@ function ArmyBuilder({
           <ul className="rw-list">
             {rosterUnits.map((u) => {
               const qty = roster[u.id];
+              const cost = effectiveCost(u);
               return (
                 <li key={u.id} className="rw-list-item rw-list-item--static ab-roster-row">
                   <div className="ab-unit-info">
                     <span className="rw-list-item-name">{u.name}</span>
+                    {u.weaponSets.length > 0 && (
+                      <select
+                        className="ab-set-select"
+                        value={resolvedSetId(u) ?? ''}
+                        onChange={(e) => selectSet(u.id, e.target.value)}
+                      >
+                        {u.weaponSets.map((s) => (
+                          <option key={s.id} value={s.id}>
+                            {s.name} ({s.effectivePointsCost} pts)
+                          </option>
+                        ))}
+                      </select>
+                    )}
                     <span className="rw-list-item-pts">
-                      {qty} × {u.pointsCost} = {qty * u.pointsCost} pts
+                      {qty} × {cost} = {qty * cost} pts
                     </span>
                   </div>
                   <div className="ab-qty-controls">

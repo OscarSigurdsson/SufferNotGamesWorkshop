@@ -118,6 +118,16 @@
   min-width: 0;
 }
 
+.ab-set-select {
+  font-size: 12px;
+  padding: 2px 4px;
+  border: 1px solid #c8b89a;
+  border-radius: 3px;
+  background: #faf7f2;
+  color: #1a1a2e;
+  max-width: 100%;
+}
+
 .ab-add-btn {
   padding: 4px 10px;
   font-size: 16px;

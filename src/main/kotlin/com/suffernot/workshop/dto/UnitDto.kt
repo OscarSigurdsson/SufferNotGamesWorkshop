@@ -23,7 +23,7 @@ data class UnitSummary(
     val name: String,
     val pointsCost: Int,
     val unitTypeName: String?,
-    val weaponSetCount: Int,
+    val weaponSets: List<WeaponSetResponse> = emptyList(),
     val stats: Map<String, String> = emptyMap(),
     val abilities: List<String> = emptyList(),
 )

@@ -36,6 +36,8 @@ class WeaponService(
 ) {
     fun getWeaponsForFaction(factionId: UUID): List<WeaponResponse> = weaponRepository.findAllByFactionId(factionId).map { it.toResponse() }
 
+    fun getWeaponSetsForUnit(unitId: UUID): List<WeaponSetResponse> = weaponSetRepository.findAllByUnitId(unitId).map { it.toResponse() }
+
     @Transactional
     fun createWeapon(
         ruleSetId: UUID,

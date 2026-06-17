@@ -1157,8 +1157,8 @@ function UnitItem({
         </div>
         <div className="rw-list-item-actions" onClick={(e) => e.stopPropagation()}>
           <span className="rw-list-item-pts">{unit.pointsCost} pts</span>
-          {unit.weaponSetCount > 0 && (
-            <span className="rw-visibility-badge rw-visibility-badge--public">{unit.weaponSetCount} set{unit.weaponSetCount !== 1 ? 's' : ''}</span>
+          {unit.weaponSets.length > 0 && (
+            <span className="rw-visibility-badge rw-visibility-badge--public">{unit.weaponSets.length} set{unit.weaponSets.length !== 1 ? 's' : ''}</span>
           )}
           {isOwner && (
             <>

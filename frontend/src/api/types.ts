@@ -67,7 +67,7 @@ export interface UnitSummary {
   name: string;
   pointsCost: number;
   unitTypeName: string | null;
-  weaponSetCount: number;
+  weaponSets: WeaponSetResponse[];
   stats: Record<string, string>;
   abilities: string[];
 }

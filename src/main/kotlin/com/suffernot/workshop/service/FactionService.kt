@@ -33,6 +33,7 @@ class FactionService(
     private val unitTypeRepository: UnitTypeRepository,
     private val weaponRepository: WeaponRepository,
     private val weaponSetRepository: WeaponSetRepository,
+    private val weaponService: WeaponService,
 ) {
     @Transactional(readOnly = true)
     fun findById(
@@ -53,7 +54,7 @@ class FactionService(
                     name = unit.name,
                     pointsCost = unit.pointsCost,
                     unitTypeName = unit.unitType?.name,
-                    weaponSetCount = weaponSetRepository.findAllByUnitId(unit.id).size,
+                    weaponSets = weaponService.getWeaponSetsForUnit(unit.id),
                     stats = unit.stats,
                     abilities = unit.abilities,
                 )
@@ -164,7 +165,7 @@ class FactionService(
                     abilities = request.abilities,
                 ),
             )
-        return UnitSummary(unit.id, unit.name, unit.pointsCost, unit.unitType?.name, 0, unit.stats, unit.abilities)
+        return UnitSummary(unit.id, unit.name, unit.pointsCost, unit.unitType?.name, emptyList(), unit.stats, unit.abilities)
     }
 
     @Transactional
@@ -196,8 +197,15 @@ class FactionService(
         unit.stats = request.stats
         unit.abilities = request.abilities
         val saved = gameUnitRepository.save(unit)
-        val setCount = weaponSetRepository.findAllByUnitId(unitId).size
-        return UnitSummary(saved.id, saved.name, saved.pointsCost, saved.unitType?.name, setCount, saved.stats, saved.abilities)
+        return UnitSummary(
+            id = saved.id,
+            name = saved.name,
+            pointsCost = saved.pointsCost,
+            unitTypeName = saved.unitType?.name,
+            weaponSets = weaponService.getWeaponSetsForUnit(unitId),
+            stats = saved.stats,
+            abilities = saved.abilities,
+        )
     }
 
     @Transactional
