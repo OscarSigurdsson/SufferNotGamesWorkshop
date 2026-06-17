@@ -1,7 +1,0 @@
-[90m/home/oscar-sigurdsson/Private-Projects/SufferNotGamesWorkshop/src/main/kotlin/com/suffernot/workshop/controller/[0mFactionController.kt[90m:[0m41[90m:41:[0m First line of body expression fits on same line as function signature [90m(standard:function-signature)[0m
-[90m/home/oscar-sigurdsson/Private-Projects/SufferNotGamesWorkshop/src/main/kotlin/com/suffernot/workshop/controller/[0mFactionController.kt[90m:[0m81[90m:29:[0m First line of body expression fits on same line as function signature [90m(standard:function-signature)[0m
-[90m/home/oscar-sigurdsson/Private-Projects/SufferNotGamesWorkshop/src/main/kotlin/com/suffernot/workshop/controller/[0mRuleSetController.kt[90m:[0m68[90m:45:[0m First line of body expression fits on same line as function signature [90m(standard:function-signature)[0m
-[90m/home/oscar-sigurdsson/Private-Projects/SufferNotGamesWorkshop/src/main/kotlin/com/suffernot/workshop/controller/[0mWeaponController.kt[90m:[0m50[90m:40:[0m First line of body expression fits on same line as function signature [90m(standard:function-signature)[0m
-
-Summary error count (descending) by rule:
-  standard:function-signature: 4
