@@ -11,7 +11,7 @@ class DatabaseUrlEnvironmentPostProcessor : EnvironmentPostProcessor {
         environment: ConfigurableEnvironment,
         application: SpringApplication,
     ) {
-        val rawUrl = environment.getProperty("DATABASE_URL") ?: return
+        val rawUrl = System.getenv("DATABASE_URL") ?: return
 
         val uri = URI(rawUrl.removePrefix("jdbc:"))
         val parts = uri.userInfo?.split(":", limit = 2)
