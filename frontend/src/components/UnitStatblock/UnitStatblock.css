@@ -1,0 +1,212 @@
+.statblock {
+  font-family: system-ui, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  background: #fff;
+  border: 2px solid #1a1a2e;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  max-width: 680px;
+  color: #1a1a1a;
+}
+
+/* ── Header ── */
+.statblock-header {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 10px 16px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.statblock-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.statblock-faction {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c8a84b;
+}
+
+/* ── Stat line ── */
+.statblock-stats {
+  display: flex;
+  background: #2c2c44;
+}
+
+.stat-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 4px;
+  border-right: 1px solid #3d3d5c;
+}
+
+.stat-cell:last-child {
+  border-right: none;
+}
+
+.stat-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #c8a84b;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* ── Section ── */
+.statblock-section {
+  border-top: 2px solid #c8a84b;
+}
+
+.statblock-section-title {
+  background: #c8a84b;
+  color: #1a1a2e;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 3px 10px;
+}
+
+/* ── Weapon tables ── */
+.weapon-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.weapon-table th {
+  background: #f0ead8;
+  color: #5a4a1a;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 4px 8px;
+  text-align: center;
+  border-bottom: 1px solid #d4c070;
+}
+
+.weapon-table th:first-child {
+  text-align: left;
+}
+
+.weapon-table td {
+  padding: 4px 8px;
+  text-align: center;
+  border-bottom: 1px solid #e8e4d8;
+}
+
+.weapon-table td:first-child {
+  text-align: left;
+}
+
+.weapon-table tr:last-child td {
+  border-bottom: none;
+}
+
+.weapon-table tr:nth-child(even) td {
+  background: #faf8f0;
+}
+
+.weapon-name {
+  font-weight: 600;
+}
+
+.weapon-abilities {
+  font-size: 11px;
+  color: #7a5a10;
+  font-style: italic;
+}
+
+/* ── Abilities ── */
+.abilities-list {
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ability {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ability-name {
+  font-weight: 700;
+  font-size: 12px;
+  color: #1a1a2e;
+}
+
+.ability-name .core-badge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #c8a84b;
+  color: #1a1a2e;
+  padding: 1px 4px;
+  border-radius: 2px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.ability-description {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ── Keywords ── */
+.statblock-keywords {
+  border-top: 1px solid #d4c070;
+  padding: 6px 10px;
+  background: #faf8f0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.keywords-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #5a4a1a;
+  margin-right: 4px;
+}
+
+.keywords-value {
+  font-size: 11px;
+  color: #333;
+}
+
+/* ── Footer ── */
+.statblock-footer {
+  background: #1a1a2e;
+  color: #c8a84b;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+}

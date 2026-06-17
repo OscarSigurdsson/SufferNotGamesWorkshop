@@ -1,0 +1,3 @@
+ALTER TABLE rule_sets
+    ADD COLUMN user_id   UUID    REFERENCES users(id) ON DELETE SET NULL,
+    ADD COLUMN is_public BOOLEAN NOT NULL DEFAULT true;

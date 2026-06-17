@@ -1,0 +1,390 @@
+.rw-panel {
+  max-width: 100%;
+}
+
+.rw-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.rw-panel-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rw-description {
+  color: #6b6050;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.rw-breadcrumb {
+  margin-bottom: 12px;
+}
+
+.rw-back {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #6b6050;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rw-back:hover {
+  color: #1a1a2e;
+}
+
+.rw-section {
+  margin-bottom: 32px;
+}
+
+.rw-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #c8b89a;
+}
+
+.rw-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Buttons */
+.rw-btn {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  transition: background 0.15s;
+}
+
+.rw-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rw-btn-primary {
+  background: #1a1a2e;
+  color: #f4f2ec;
+}
+
+.rw-btn-primary:hover:not(:disabled) {
+  background: #2d2d4e;
+}
+
+.rw-btn-secondary {
+  background: transparent;
+  color: #1a1a2e;
+  border: 1px solid #c8b89a;
+}
+
+.rw-btn-secondary:hover:not(:disabled) {
+  background: #ede8df;
+}
+
+/* Forms */
+.rw-form {
+  background: #ede8df;
+  border: 1px solid #c8b89a;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rw-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b6050;
+}
+
+.rw-input {
+  padding: 7px 10px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid #c8b89a;
+  border-radius: 4px;
+  background: #f4f2ec;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.rw-input:focus {
+  border-color: #1a1a2e;
+}
+
+.rw-textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.rw-input-narrow {
+  max-width: 120px;
+}
+
+/* Lists */
+.rw-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rw-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: #fff;
+  border: 1px solid #c8b89a;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.rw-list-item:hover {
+  background: #ede8df;
+  border-color: #1a1a2e;
+}
+
+.rw-list-item--static {
+  cursor: default;
+}
+
+.rw-list-item--static:hover {
+  background: #fff;
+  border-color: #c8b89a;
+}
+
+.rw-list-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.rw-list-item-desc {
+  font-size: 13px;
+  color: #6b6050;
+}
+
+.rw-list-item-pts {
+  font-size: 13px;
+  color: #6b6050;
+  font-style: italic;
+}
+
+/* States */
+.rw-loading,
+.rw-empty {
+  color: #6b6050;
+  font-size: 14px;
+  font-style: italic;
+  margin: 8px 0;
+}
+
+.rw-error {
+  color: #9b1c1c;
+  font-size: 13px;
+  margin: 4px 0;
+}
+
+.rw-label--row {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.rw-list-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rw-list-item-owner {
+  font-size: 12px;
+  color: #6b6050;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.rw-visibility-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.rw-visibility-badge--public {
+  background: #d4edda;
+  color: #155724;
+}
+
+.rw-visibility-badge--private {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.rw-view-only {
+  font-size: 13px;
+  color: #6b6050;
+  font-style: italic;
+  margin: 0 0 16px;
+  padding: 8px 12px;
+  background: #ede8df;
+  border-radius: 4px;
+  border-left: 3px solid #c8b89a;
+}
+
+.rw-btn-icon {
+  background: none;
+  border: none;
+  padding: 0 4px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #c8b89a;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.rw-btn-icon.rw-btn-danger:hover {
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.rw-btn-danger-outline {
+  background: none;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rw-btn-danger-outline:hover {
+  background: #fee2e2;
+}
+
+.rw-list-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Keyword tags */
+.rw-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.rw-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px 3px 10px;
+  background: #1a1a2e;
+  color: #f4f2ec;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.rw-tag-remove {
+  background: none;
+  border: none;
+  color: #c8b89a;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 0 0 2px;
+}
+
+.rw-tag-remove:hover {
+  color: #fee2e2;
+}
+
+.rw-tag-add-form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rw-input-inline {
+  padding: 4px 8px;
+  font-size: 13px;
+  width: 140px;
+}
+
+/* Stat display in weapon list */
+.rw-stat-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.rw-stat-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  padding: 2px 8px;
+  background: #ede8df;
+  border: 1px solid #c8b89a;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #1a1a2e;
+}
+
+.rw-stat-chip-label {
+  font-weight: 700;
+  color: #6b6050;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  margin-right: 2px;
+}

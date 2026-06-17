@@ -1,0 +1,109 @@
+.app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #c8b89a;
+}
+
+.tab {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: #6b6050;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.tab:hover {
+  color: #1a1a2e;
+}
+
+.tab--active {
+  color: #1a1a2e;
+  border-bottom-color: #1a1a2e;
+}
+
+main {
+  padding-top: 24px;
+}
+
+.placeholder {
+  color: #6b6050;
+  font-style: italic;
+}
+
+.app-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #6b6050;
+  font-style: italic;
+}
+
+.app-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.app-header-top h1 {
+  margin: 0;
+}
+
+.app-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-username {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b6050;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.app-logout {
+  background: none;
+  border: 1px solid #c8b89a;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: #6b6050;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.app-logout:hover {
+  color: #1a1a2e;
+  border-color: #1a1a2e;
+}

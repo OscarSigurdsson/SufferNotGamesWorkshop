@@ -1,0 +1,37 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f2ec;
+  padding: 24px 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid #c8b89a;
+  border-radius: 8px;
+  padding: 32px;
+}
+
+.auth-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+.auth-form-area {
+  margin-top: 24px;
+}
+
+.auth-inner-form {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
