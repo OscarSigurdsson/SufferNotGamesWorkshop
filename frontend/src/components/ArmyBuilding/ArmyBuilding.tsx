@@ -296,7 +296,7 @@ function ArmyBuilder({
   function effectiveCost(unit: UnitSummary): number {
     if (unit.weaponSets.length === 0) return unit.pointsCost;
     const set = unit.weaponSets.find((s) => s.id === resolvedSetId(unit));
-    return set?.effectivePointsCost ?? unit.pointsCost;
+    return unit.pointsCost + (set?.effectivePointsCost ?? 0);
   }
 
   const totalPoints = units.reduce((sum, u) => sum + effectiveCost(u) * (roster[u.id] ?? 0), 0);
