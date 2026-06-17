@@ -7,8 +7,10 @@ import org.springframework.core.env.MapPropertySource
 import java.net.URI
 
 class DatabaseUrlEnvironmentPostProcessor : EnvironmentPostProcessor {
-
-    override fun postProcessEnvironment(environment: ConfigurableEnvironment, application: SpringApplication) {
+    override fun postProcessEnvironment(
+        environment: ConfigurableEnvironment,
+        application: SpringApplication,
+    ) {
         val rawUrl = environment.getProperty("DATABASE_URL") ?: return
 
         val uri = URI(rawUrl.removePrefix("jdbc:"))
@@ -21,7 +23,7 @@ class DatabaseUrlEnvironmentPostProcessor : EnvironmentPostProcessor {
         val password = parts.getOrElse(1) { "" }
         val portSegment = if (uri.port != -1) ":${uri.port}" else ""
         val query = uri.rawQuery?.let { "?$it" } ?: "?sslmode=require"
-        val jdbcUrl = "jdbc:postgresql://${uri.host}${portSegment}${uri.path}${query}"
+        val jdbcUrl = "jdbc:postgresql://${uri.host}${portSegment}${uri.path}$query"
 
         environment.propertySources.addFirst(
             MapPropertySource(

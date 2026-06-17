@@ -46,9 +46,10 @@ class AuthController(
         userRepository.save(
             User(username = req.username, email = req.email, passwordHash = passwordEncoder.encode(req.password)),
         )
-        val auth = authenticationManager.authenticate(
-            UsernamePasswordAuthenticationToken(req.username, req.password),
-        )
+        val auth =
+            authenticationManager.authenticate(
+                UsernamePasswordAuthenticationToken(req.username, req.password),
+            )
         val ctx = SecurityContextHolder.createEmptyContext()
         ctx.authentication = auth
         SecurityContextHolder.setContext(ctx)
